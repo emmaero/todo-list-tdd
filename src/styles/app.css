@@ -1,0 +1,35 @@
+.App{
+  max-width: 400px;
+  margin: auto;
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-items: center;
+  grid-row-gap: 1.3rem;
+  padding-bottom: 4rem;
+  grid-template-columns: 100%;
+  padding: 2rem;
+}
+.logo{
+  max-width: 200px;
+  margin-top: 4rem;
+}
+
+.btn{
+  background-color: #0058AB;
+  min-width: 5rem;
+  color: #ffff;
+  font-family: Noto_Sans_Bold;
+  border-radius: 64px;
+  border: none;
+  height: 3.5rem;
+  padding: 0 2rem;
+  width: 100%;
+  margin: auto;
+  cursor: pointer;
+}
+button[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+  cursor:none;
+}

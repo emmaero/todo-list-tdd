@@ -1,0 +1,13 @@
+{
+  "name": {
+    "autoFocus": false,
+    "autoComplete": "on",
+    "type": "text",
+    "name": "name"
+  },
+  "price": {
+    "autoFocus": false,
+    "type": "number",
+    "name": "price"
+  }
+}
