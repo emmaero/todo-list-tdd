@@ -7,6 +7,7 @@ export default function InputField({ children, hook, HTMLParameter }) {
       <label>{children} </label>
 
       <input
+        className="form-input"
         onChange={(event) => setState(event.target.value)}
         {...HTMLParameter}
       />

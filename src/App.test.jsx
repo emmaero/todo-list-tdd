@@ -1,8 +1,33 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
+import { ListProvider } from "./states/ListProvider";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/React test/i);
-  expect(linkElement).toBeInTheDocument();
+test("Render welcome screen when list is empty", () => {
+  const mockData = [];
+  Storage.prototype.getItem = jest.fn(() => JSON.stringify(mockData));
+  render(
+    <ListProvider>
+      <App />
+    </ListProvider>
+  );
+  const textElement = screen.getByText(/Welcome to EIKA/i);
+  expect(textElement).toBeInTheDocument();
+});
+
+test("Render shopping screen when list not empty", () => {
+  const mockItem = {
+    name: "coffee table",
+    price: "999",
+    id: "8989",
+    acquired: false
+  };
+  const mockData = [mockItem];
+  Storage.prototype.getItem = jest.fn(() => JSON.stringify(mockData));
+  render(
+    <ListProvider>
+      <App />
+    </ListProvider>
+  );
+  const textElement = screen.getByText(/Eika shopping list/i);
+  expect(textElement).toBeInTheDocument();
 });

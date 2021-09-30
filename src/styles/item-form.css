@@ -33,11 +33,12 @@
   margin: 8px 0;
   display: inline-block;
   border: none;
-  background-color: #cccccc;
+  background-color: #D3D3D3;
   box-sizing: border-box;
-  border-radius: 64px;
-  height: 2.5rem;
+  border-radius: 10px;
+  height: 44px;
   text-align: center;
+   box-shadow: 0 0 4pt 0.5pt #000;
 }
 
 .closeAdd {
