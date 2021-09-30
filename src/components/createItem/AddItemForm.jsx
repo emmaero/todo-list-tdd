@@ -2,14 +2,20 @@ import { useState } from "react";
 import { useList } from "../../states/ListProvider";
 import InputField from "../customInput/InputField";
 import formData from "../../data/formData.json";
+import createItem from "../../scripts/createItem";
 
 export default function AddItemForm() {
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
+  const [isValidInput, setIsValidInput] = useState(true);
 
-  const {dispatch } = useList();
+  const { dispatch } = useList();
+
   function submitHandler() {
     const inputItem = createItem(productName, price);
+  if (price.trim() === "" || productName.trim() === "") {
+    return
+  }
     dispatch({ type: "addItem", inputItem });
   }
   return (
@@ -35,13 +41,4 @@ export default function AddItemForm() {
       </div>
     </form>
   );
-
-  function createItem(name, price) {
-    return {
-      name: name,
-      price: price,
-      id: Math.random().toString(),
-      acquired: false,
-    };
-  }
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../../styles/style.module.css";
 import { sortByName, sortByPrice } from "../../scripts/sorter";
 import { useList } from "../../states/ListProvider";
 

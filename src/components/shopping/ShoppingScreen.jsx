@@ -32,6 +32,7 @@ export default function ShoppingScreen() {
   );
   return (
     <>
+      <h2>Eika shopping list</h2>
       <SortShoppingList />
       <div className="item-list">
         <h3 className="center-align-text">
