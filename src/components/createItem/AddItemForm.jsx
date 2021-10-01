@@ -11,11 +11,14 @@ export default function AddItemForm() {
   const { dispatch } = useList();
 
   function submitHandler() {
+    
     const inputItem = createItem(productName, price);
     if (price.trim() === "" || productName.trim() === "") {
       return;
+    } else {
+      dispatch({ type: "addItem", inputItem });
+      return
     }
-    dispatch({ type: "addItem", inputItem });
   }
   return (
     <form onSubmit={submitHandler}>

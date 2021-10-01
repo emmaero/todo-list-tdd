@@ -2,12 +2,14 @@
   "name": {
     "autoFocus": false,
     "type": "text",
-    "name": "name"
+    "name": "name",
+    "data-testid":"name-input"
   },
   "price": {
     "autoFocus": false,
     "type": "number",
     "name": "price",
-    "min":"1"
+    "min": "1",
+    "data-testid": "price-input"
   }
 }
