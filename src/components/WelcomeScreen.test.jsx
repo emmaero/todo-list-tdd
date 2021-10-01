@@ -8,7 +8,7 @@ test("renders welcome message", () => {
       <WelcomeScreen />
     </ListProvider>
   );
-  const linkElement = screen.getByText(/Welcome to EIKA/i);
-  expect(linkElement).toBeInTheDocument();
+  const textElement = screen.getByText(/Welcome to EIKA/i);
+  expect(textElement).toBeInTheDocument();
 });
 
