@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <img className="logo" src={logo} alt="eika" />
-      <h1>Shopping List</h1>
+      <h1>Eika shopping list</h1>
       {list.length > 0 ? <ShoppingScreen /> : <WelcomeScreen />}
     </div>
   );

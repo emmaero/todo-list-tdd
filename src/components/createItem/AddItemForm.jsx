@@ -7,31 +7,32 @@ import createItem from "../../scripts/createItem";
 export default function AddItemForm() {
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
-  const [isValidInput, setIsValidInput] = useState(true);
 
   const { dispatch } = useList();
 
   function submitHandler() {
     const inputItem = createItem(productName, price);
-  if (price.trim() === "" || productName.trim() === "") {
-    return
-  }
+    if (price.trim() === "" || productName.trim() === "") {
+      return;
+    }
     dispatch({ type: "addItem", inputItem });
   }
   return (
     <form onSubmit={submitHandler}>
       <div className="new-item-wrapper">
         <div className="new-item-container">
-          <div className="new-item-content"></div>
-          <InputField
-            hook={[productName, setProductName]}
-            HTMLParameter={formData.name}
-          >
-            Product Name
-          </InputField>
-          <InputField hook={[price, setPrice]} HTMLParameter={formData.price}>
-            Price
-          </InputField>
+          <h1>Add item</h1>
+          <div className="new-item-content">
+            <InputField
+              hook={[productName, setProductName]}
+              HTMLParameter={formData.name}
+            >
+              Product Name
+            </InputField>
+            <InputField hook={[price, setPrice]} HTMLParameter={formData.price}>
+              Price
+            </InputField>
+          </div>
           <div className="add-item-button-container">
             <button type="submit" className="add-item btn">
               Add
