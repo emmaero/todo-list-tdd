@@ -3,14 +3,14 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { ListProvider } from "../../states/ListProvider";
 import ShoppingScreen from "./ShoppingScreen";
 
-test("Should render title Eika shopping list", () => {
+test("Should render title sort by", () => {
   render(
     <ListProvider>
       <ShoppingScreen />
     </ListProvider>
   );
   //Act
-  const headingElement = screen.getByText(/Eika shopping list/i);
+  const headingElement = screen.getByText(/sort by/i);
   //Assert
   expect(headingElement).toBeInTheDocument();
 });

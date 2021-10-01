@@ -28,6 +28,6 @@ test("Render shopping screen when list not empty", () => {
       <App />
     </ListProvider>
   );
-  const textElement = screen.getByText(/Eika shopping list/i);
+  const textElement = screen.getByText(/coffee table/i);
   expect(textElement).toBeInTheDocument();
 });
